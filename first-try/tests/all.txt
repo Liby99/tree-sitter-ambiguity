@@ -1,0 +1,15 @@
+// Don't parse this!
+
+f(a, b) // call
+
+a // id
+
+a, b // tuple
+
+a:b(c, d) // qualified name ("a:b")
+
+a: b(a, d) // binding "a", expr "b(a, d)"
+
+a, b: f(a, b) // binding ["a", "b"], expr "f(a, b)"
+
+a, b:f(c, d) // tuple ["a", call (qualified name "b:f" "(c, d)")]
